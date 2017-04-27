@@ -1,14 +1,18 @@
 name:                stego-uuid
-version:             0.1.0.0
+version:             1.0.0.0
 synopsis:            A generator and verifier for steganographic numbers that look random
-description:         Please see README.md
+description:
+  `stego-uuid` allows one to mark 128-bit UUIDs. If created from a random 64-bit number, the
+  whole 128-bit UUID will look random to everyone, except those who know the secret detection key.
+
 homepage:            https://github.com/dimitri-xyz/stego-uuid#readme
 author:              Dimitri DeFigueiredo
 maintainer:          defigueiredo@ucdavis.edu
+Bug-Reports:         https://github.com/dimitri-xyz/stego-uuid/issues
 copyright:           2017 Dimitri DeFigueiredo
-license:             AGPL
+license:             BSD3
 license-file:        LICENSE
-category:            steganography
+category:            Steganography, Cryptography
 build-type:          Simple
 extra-source-files:  README.md
 extra-doc-files:     doc/*.md
@@ -19,11 +23,11 @@ library
   exposed-modules:    StegoUUID
 
   default-language:   Haskell2010
-  build-depends:      base
-                    , uuid
-                    , cryptonite
-                    , bytestring
-                    , memory
+  build-depends:      base        >= 4.9.1  && < 5
+                    , uuid        >= 1.3.13 && < 1.4
+                    , cryptonite  >= 0.21   && < 0.22
+                    , bytestring  >= 0.10.8 && < 0.11
+                    , memory      >= 0.14.1 && < 0.15
 
   ghc-options: -Wall -fwarn-incomplete-record-updates -fwarn-incomplete-patterns -fwarn-incomplete-uni-patterns -j
 
@@ -34,10 +38,10 @@ test-suite test-stego-uuid
   hs-source-dirs:   test
   main-is:          Test.hs
 
-  build-depends:      base
+  build-depends:      base        >= 4.9.1  && < 5
                     , stego-uuid
-                    , random
-                    , uuid
+                    , random      >= 1.1    && < 1.2
+                    , uuid        >= 1.3.13 && < 1.4
 
   ghc-options: -Wall -fwarn-incomplete-record-updates -fwarn-incomplete-patterns -fwarn-incomplete-uni-patterns -j -threaded -rtsopts -with-rtsopts=-N
 

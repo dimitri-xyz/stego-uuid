@@ -2,7 +2,7 @@ import System.Random
 import Data.Word
 import Data.UUID
 
-import StegoUUID
+import Crypto.Stego.UUID
 
 
 secretHi = KeyHi64 12345

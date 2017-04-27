@@ -1,9 +1,9 @@
 {- |
-Module: StegoUUID
+Module: Crypto.Stego.UUID
 See README.md for an example and security considerations.
 -}
 
-module StegoUUID (
+module Crypto.Stego.UUID (
   mark ,
   isMarked,
   StegoKeyHi (..),
